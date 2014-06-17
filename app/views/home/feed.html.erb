@@ -1,0 +1,23 @@
+<%= form_for :search, url: search_path(acc_token: @acc_token) do |f| %>
+	SOME DAMNED USER:<%= f.text_field :query %>
+	<%= f.submit %>
+<% end %>
+
+<% if @feed["data"] %>
+	<% @feed["data"].each do |post| %>
+		<%= link_to post["link"] do %>
+			<% if post["caption"] %>
+				<%= post["caption"]["text"] %><br />
+			<% end %>
+			<%= image_tag post["images"]["thumbnail"]["url"] %><% end %>
+		<br />
+		from
+		<% if post["caption"] %>
+			<%= post["caption"]["from"]["full_name"] %><br />
+		<% end %>
+		<%= post["location"].inspect %>
+		<hr />
+	<% end %>
+<% else %>
+	NO FEED DATA!
+<% end %>

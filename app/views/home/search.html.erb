@@ -1,0 +1,6 @@
+<% @results["data"].each do |user| %>
+	<%= link_to feed_path(acc_token: @acc_token, user_id: user["id"]) do %>
+		<%= user["username"] %> - <%= user["bio"] %>
+	<% end %>
+	<hr />
+<% end %>
