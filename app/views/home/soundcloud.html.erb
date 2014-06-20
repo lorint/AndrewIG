@@ -1,0 +1,22 @@
+<h1>Playlists:</h1>
+<ul>
+<% @playlists.each do |p| %>
+	<li>
+	<%= link_to p.permalink_url do %>
+		<%= p.title %>, with <%= p.track_count %> tracks
+	<% end %>
+	</li>
+<% end %>
+</ul>
+<br />
+<br />
+<h1>Favorites:</h1>
+<ul>
+<% @favorites.each do |f| %>
+	<li>
+	<%= link_to f.permalink_url do %>
+		<%= f.title %> ... <%= f.id %>
+	<% end %>
+	</li>
+<% end %>
+</ul>

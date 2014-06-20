@@ -1,2 +1,8 @@
-<a href="https://api.instagram.com/oauth/authorize/?client_id=d07f56c333c44e39b37b627ad635d1bb&redirect_uri=http://localhost:3000/instagram&response_type=code">Log into Instagram</a>
-<%= ENV["IG_CLIENT_ID"] %>
+<a href="https://api.instagram.com/oauth/authorize/?client_id=<%= ENV["IG_CLIENT_ID"] %>&redirect_uri=http://localhost:3000/instagram&response_type=code">Log into Instagram</a>
+
+<%= link_to sc1_path, "Log into SoundCloud" %><br />
+<br />
+Two issues you might notice when trying to log into SoundCloud:<br />
+1. If you log in using Facebook and you haven't yet chosen to allow SoundCloud to post on your facebook wall, it will generally end up on a blank screen.  Simply navigate back to our site and try logging in again and things will be fine.<br />
+<br />
+2. If the message "The token could not be found." is shown on SoundCloud's site, you will need to log off SoundCloud and log on again.  Then it should log in fine.

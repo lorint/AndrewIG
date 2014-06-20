@@ -5,6 +5,8 @@ AndrewIG::Application.routes.draw do
   get '/home/feed' => 'home#feed', as: :feed
   post '/home/search' => 'home#search', as: :search
 
+  get '/sc1' => 'home#sc1', as: :sc1
+  get '/soundcloud' => 'home#soundcloud'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
